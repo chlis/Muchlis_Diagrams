@@ -1,0 +1,35 @@
+@startuml Diagram Kelas untuk FinanceApp
+' Author: Muchlis
+' NIM: 042068646
+
+class User {
+    + id: Integer
+    + username: String
+    + password: String
+    + login(): Boolean
+    + register(): Boolean
+}
+
+class Transaction {
+    + id: Integer
+    + user_id: Integer
+    + amount: Float
+    + type: String
+    + date: Date
+    + addTransaction(): Boolean
+    + deleteTransaction(): Boolean
+}
+
+class Report {
+    + user_id: Integer
+    + generateReport(): List
+}
+
+class WhatsAppNotification {
+    + sendNotification(user_id: Integer): Boolean
+}
+
+User "1" --> "many" Transaction
+Transaction "1" --> "1" Report
+User "1" --> "1" WhatsAppNotification
+@enduml

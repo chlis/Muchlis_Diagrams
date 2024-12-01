@@ -1,0 +1,33 @@
+@startuml Diagram Komponen untuk arsitektur FinanceApp
+' Author: Muchlis
+' NIM: 042068646
+
+component "Frontend" {
+    [Login Page]
+    [Dashboard]
+    [Transaction Form]
+    [Report Page]
+    [Finish Button]
+}
+
+component "Backend" {
+    [API: /login]
+    [API: /register]
+    [API: /transactions]
+    [API: /report]
+    [API: /sendNotification]
+}
+
+component "Database" {
+    [SQLite DB]
+}
+
+[Login Page] --> [API: /login]
+[Transaction Form] --> [API: /transactions]
+[Report Page] --> [API: /report]
+[Finish Button] --> [API: /sendNotification]
+[API: /login] --> [SQLite DB]
+[API: /transactions] --> [SQLite DB]
+[API: /report] --> [SQLite DB]
+[API: /sendNotification] --> [SQLite DB]
+@enduml

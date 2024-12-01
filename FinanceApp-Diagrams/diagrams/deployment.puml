@@ -1,0 +1,17 @@
+@startuml Diagram Deployment untuk FinanceApp
+' Author: Muchlis
+' NIM: 042068646
+
+node "Android Device" {
+    component "Pydroid3"
+    component "FinanceApp Server (Flask)"
+    component "WhatsApp"
+}
+
+node "Database" {
+    component "SQLite"
+}
+
+"FinanceApp Server (Flask)" --> "SQLite"
+"FinanceApp Server (Flask)" --> "WhatsApp"
+@enduml

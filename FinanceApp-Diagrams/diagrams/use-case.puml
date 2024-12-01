@@ -1,0 +1,27 @@
+@startuml Diagram Use Case FinanceApp
+' Author: Muchlis
+' NIM: 042068646
+
+left to right direction
+actor User as U
+
+rectangle FinanceApp {
+    usecase "Login" as UC1
+    usecase "Registrasi" as UC2
+    usecase "Pencatatan Pemasukan" as UC3
+    usecase "Pencatatan Pengeluaran" as UC4
+    usecase "Melihat Saldo" as UC5
+    usecase "Laporan Riwayat Transaksi" as UC6
+    usecase "Hapus Data Transaksi" as UC7
+    usecase "Kirim Notifikasi ke WhatsApp" as UC8
+}
+
+U --> UC1
+U --> UC2
+U --> UC3
+U --> UC4
+U --> UC5
+U --> UC6
+U --> UC7
+U --> UC8
+@enduml

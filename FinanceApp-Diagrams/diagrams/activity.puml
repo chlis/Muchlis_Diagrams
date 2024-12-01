@@ -1,0 +1,24 @@
+@startuml Diagram Aktivitas untuk proses transaksi di FinanceApp
+' Author: Muchlis
+' NIM: 042068646
+
+start
+:User membuka aplikasi;
+:User login;
+if (Login berhasil?) then (Ya)
+    :Tampilkan menu utama;
+    :Pilih opsi "Tambah Transaksi";
+    :Input data transaksi;
+    if (Data valid?) then (Ya)
+        :Simpan transaksi ke database;
+        :Tampilkan notifikasi berhasil;
+        :Pilih tombol "Finish";
+        :Arahkan ke WhatsApp dengan pesan otomatis;
+    else (Tidak)
+        :Tampilkan pesan kesalahan;
+    endif
+else (Tidak)
+    :Tampilkan pesan login gagal;
+endif
+stop
+@enduml
